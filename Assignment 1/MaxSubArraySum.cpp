@@ -29,19 +29,13 @@ int maxSubRec(int a[], int l, int r) {
     );
 }
 
-int maxSubIter(int a[], int n) {
-    int best = a[0], curr = a[0];
-    for (int i = 1; i < n; i++) {
-        curr = max(a[i], curr + a[i]);
-        best = max(best, curr);
-    }
-    return best;
-}
+
 
 int main() {
     int a[] = {-2,-3,4,-1,-2,1,5,-3};
     int n = 8;
     cout << maxSubRec(a, 0, n - 1) << endl;
-    cout << maxSubIter(a, n);
+    
     return 0;
 }
+
