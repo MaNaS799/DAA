@@ -28,24 +28,16 @@ void mergeSortRec(int a[], int l, int r) {
     merge(a, l, m, r);
 }
 
-void mergeSortIter(int a[], int n) {
-    for (int sz = 1; sz < n; sz *= 2) {
-        for (int l = 0; l < n - 1; l += 2 * sz) {
-            int m = l + sz - 1;
-            int r = min(l + 2 * sz - 1, n - 1);
-            if (m < r) merge(a, l, m, r);
-        }
-    }
-}
+
 
 int main() {
     int a[] = {5,4,3,2,1};
     int b[] = {5,4,3,2,1};
     int n = 5;
     mergeSortRec(a, 0, n - 1);
-    mergeSortIter(b, n);
     for (int i = 0; i < n; i++) cout << a[i] << " ";
     cout << endl;
     for (int i = 0; i < n; i++) cout << b[i] << " ";
     return 0;
 }
+
